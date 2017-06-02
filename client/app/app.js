@@ -1,5 +1,5 @@
 
-// Infrastructure
+// Infrastructure + info
 import angular      from 'angular';
 import uiRouter     from 'angular-ui-router';
 import ngMaterial   from 'angular-material';

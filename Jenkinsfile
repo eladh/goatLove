@@ -1,18 +1,6 @@
 node {
     currentBuild.result = "SUCCESS"
 
-    try {
+checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '896f2647-09d8-473a-89b1-63defe6ebacd', url: 'https://github.com/eladh/goatLove.git']]])
 
-       stage('Checkout'){
-           git poll: true ,url: 'https://github.com/eladh/goatLove.git'
-       }
-
-       stage('Cleanup'){
-         echo 'prune and cleanup'
-       }
-
-    } catch (err) {
-        currentBuild.result = "FAILURE"
-        throw err
-    }
 }

@@ -1,6 +1,6 @@
 {
   "name": "goat-love",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Starter for Angular + ES6 + (Webpack or JSPM)",
   "main": "index.js",
   "dependencies": {

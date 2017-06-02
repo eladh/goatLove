@@ -4,7 +4,7 @@ node('node') {
     try {
 
        stage('Checkout'){
-           checkout scm
+           git url: 'https://github.com/eladh/goatLove.git'
        }
 
        stage('Cleanup'){

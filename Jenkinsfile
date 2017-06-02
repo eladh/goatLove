@@ -4,7 +4,7 @@ node {
     try {
 
        stage('Checkout'){
-           git url: 'https://github.com/eladh/goatLove.git'
+           git poll: true ,url: 'https://github.com/eladh/goatLove.git'
        }
 
        stage('Cleanup'){

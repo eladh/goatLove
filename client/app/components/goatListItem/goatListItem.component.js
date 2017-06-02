@@ -12,4 +12,6 @@ const goatListItemComponent = {
   controllerAs: 'vm'
 };
 
+//sffsfsf
+
 export default goatListItemComponent;

@@ -1,6 +1,31 @@
 node {
     currentBuild.result = "SUCCESS"
 
-checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'DisableRemotePoll']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '896f2647-09d8-473a-89b1-63defe6ebacd', url: 'https://github.com/eladh/goatLove.git']]])
+    try {
 
+       stage('Checkout'){
+           git pull: true ,url: 'https://github.com/eladh/goatLove.git'
+       }
+
+         stage('Test'){
+
+                env.NODE_ENV = "test"
+
+                print "Environment will be : ${env.NODE_ENV}"
+
+                sh 'node -v'
+                sh 'npm prune'
+                sh 'npm install'
+                sh 'npm test'
+
+              }
+
+       stage('Cleanup'){
+         echo 'prune and cleanup'
+       }
+
+    } catch (err) {
+        currentBuild.result = "FAILURE"
+        throw err
+    }
 }

@@ -1,6 +1,7 @@
-var webpack = require('webpack');
-var path    = require('path');
-var config  = require('./webpack.config');
+var webpack       = require('webpack');
+var path          = require('path');
+var config        = require('./webpack.config');
+var ArchivePlugin = require('webpack-archive-plugin');
 
 config.output = {
   filename: '[name].bundle.js',
@@ -9,8 +10,10 @@ config.output = {
 };
 
 config.plugins = config.plugins.concat([
+    // Archive bundles
+    new ArchivePlugin(),
 
-  // Reduces bundles total size
+    // Reduces bundles total size
   new webpack.optimize.UglifyJsPlugin({
     mangle: {
 

@@ -18,6 +18,7 @@ node {
                 sh 'npm install'
                 sh 'npm test'
 
+               step([$class: 'JUnitResultArchiver', testResults: '**/build/test-results/*.xml'])
               }
 
        stage('Cleanup'){

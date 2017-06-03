@@ -23,7 +23,7 @@ node {
 
               stage('Build') {
                   sh 'npm build'
-                  archiveArtifacts artifacts: '**/dist/*.*', fingerprint: true
+                  archiveArtifacts artifacts: 'dist', fingerprint: true
 
               }
 

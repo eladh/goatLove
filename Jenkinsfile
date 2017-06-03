@@ -23,7 +23,7 @@ node {
 
               stage('Build') {
                   sh 'gulp webpack'
-                  archiveArtifacts artifacts: 'dist/*.tar.gz', fingerprint: true
+                  archiveArtifacts artifacts: '*.tar.gz', fingerprint: true
 
               }
 

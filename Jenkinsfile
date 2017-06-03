@@ -22,8 +22,8 @@ node {
               }
 
               stage('Build') {
-                  sh 'npm build'
-                  archiveArtifacts artifacts: 'dist', fingerprint: true
+                  sh 'gulp webpack'
+                  archiveArtifacts artifacts: 'dist/*.*', fingerprint: true
 
               }
 

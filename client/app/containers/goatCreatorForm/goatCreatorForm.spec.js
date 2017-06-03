@@ -14,20 +14,6 @@ describe('GotCreatorForm', () => {
     };
   }));
 
-  describe('Controller', () => {
-      it('has goat property', () => {
-         let controller = makeController();
-
-         expect(controller).to.have.property('goat');
-      });
-
-      it('has add goat method', () => {
-          let controller = makeController();
-
-          expect(controller).to.have.property('goat');
-      });
-  });
-
   describe('Template', () => {
     // template specs
     // tip: use regex to ensure correct bindings are used e.g., {{  }}

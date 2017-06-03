@@ -21,6 +21,12 @@ node {
                step([$class: 'JUnitResultArchiver', testResults: 'test-results.xml'])
               }
 
+              stage('Build') {
+                  sh 'npm build'
+                  archiveArtifacts artifacts: '**/dist/*.*', fingerprint: true
+
+              }
+
        stage('Cleanup'){
          echo 'prune and cleanup'
        }
